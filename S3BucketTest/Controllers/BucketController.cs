@@ -10,15 +10,15 @@ namespace S3BucketTest.Controllers
     [Route("[controller]")]
     public class BucketController : ControllerBase
     {
-        private static readonly string awsSecretAccessKey = "QCwp+9c197jq0JLJQiB2nQcjie5fxnMttroV0HLA";
-        private static readonly string awsAccessKeyId = "AKIA3RXTBGWJ4YXIWFNT";
+        private static readonly string awsSecretAccessKey = "";
+        private static readonly string awsAccessKeyId = "";
         private static readonly string bucket = "lcatestbucket";
         //private static readonly string folder = "";
 
         [HttpGet]
         public async Task<ActionResult<int>> Get()
         {
-            var client = new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey, RegionEndpoint.USEast2);
+            var client = new AmazonS3Client();
 
             ListObjectsRequest request = new ListObjectsRequest();
             request.BucketName = bucket;
